@@ -77,7 +77,7 @@ In the app.js code if you dont upload an ipa a ipa will automatically be used yo
 
 ### Curl
 ```bash
-curl -X POST https://api.ipasign.pro/sign \
+curl -X POST https://api.daisign.lol/sign \
 -F "ipa=@/path/to/app.ipa" \
 -F "p12=@/path/to/cert.p12" \
 -F "mobileprovision=@/path/to/profile.mobileprovision" \
@@ -87,7 +87,7 @@ curl -X POST https://api.ipasign.pro/sign \
 ```python
 import requests
 
-url = "https://api.ipasign.pro/sign"
+url = "https://api.daisign.lol/sign"
 files = {
     'ipa': open('/path/to/app.ipa', 'rb'),
     'p12': open('/path/to/cert.p12', 'rb'),
@@ -110,7 +110,7 @@ form.append('p12', fs.createReadStream('/path/to/cert.p12'));
 form.append('mobileprovision', fs.createReadStream('/path/to/profile.mobileprovision'));
 form.append('p12_password', 'your_password');
 
-axios.post('https://api.ipasign.pro/sign', form, {
+axios.post('https://api.daisign.lol/sign', form, {
     headers: form.getHeaders(),
 })
 .then(response => console.log(response.data))
@@ -128,7 +128,7 @@ axios.post('https://api.ipasign.pro/sign', form, {
 </head>
 <body>
     <h2>IPA Signer</h2>
-    <form id="signForm" action="https://api.ipasign.pro/sign" method="POST" enctype="multipart/form-data">
+    <form id="signForm" action="https://api.daisign.lol/sign" method="POST" enctype="multipart/form-data">
         <p>
             <label for="ipa">IPA File (.ipa) <small>(Optional)</small></label><br>
             <input type="file" id="ipa" name="ipa" accept=".ipa">
@@ -223,7 +223,7 @@ axios.post('https://api.ipasign.pro/sign', form, {
 ### Example Response
 ```
 {
-  "installLink": "itms-services://?action=download-manifest&url=https://api.ipasign.pro/plist/example.plist"
+  "installLink": "itms-services://?action=download-manifest&url=https://api.daisign.lol/plist/example.plist"
 }
 ```
 Field	Description
